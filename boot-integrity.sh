@@ -16,7 +16,7 @@ esp_sync() {
 
 clevis_luks_edit_all() {
   for part in $(lsblk -o NAME -ln | grep -E '^[^loop]'); do
-    if cryptsetup isLuks /dev/"$part" &> /dev/null; then
+    if cryptsetup isLuks /dev/"$part" 2> /dev/null; then
       if clevis luks list -d /dev/"$part" tpm2 | grep -q "$1"; then
         echo "clevis luks config /dev/$part no changes"
       else
