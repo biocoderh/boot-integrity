@@ -1,0 +1,12 @@
+[Unit]
+Description=boot-integrity start/stop service
+After=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/sbin/boot-integrity start
+ExecStop=/usr/local/sbin/boot-integrity stop
+
+[Install]
+WantedBy=multi-user.target
