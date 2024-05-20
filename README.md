@@ -4,6 +4,8 @@
 
 Systemd/Shell scripts to automate ESP cloning and clevis tpm2 pcr's changing on sysboot upgrades
 
+Note: EFI partitions cloning done through dd if=(/boot/efi partition) of=(first ESP which not mounted to /boot/efi), it's also clone PARTLABEL and UUID which should not make issues, just leave one ESP on /etc/fstab.
+
 ## Install
 
 Requirements:
@@ -46,3 +48,7 @@ environment veriables:
     CLEVIS_LUKS_UPGRADE_CONFIG - upgrade clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
 
 ```
+## Links
+
+[Safe automatic decryption of LUKS partition using TPM2](https://221b.uk/safe-automatic-decryption-luks-partition-tpm2)
+[dracut-crypt-ssh](https://github.com/dracut-crypt-ssh/dracut-crypt-ssh)
