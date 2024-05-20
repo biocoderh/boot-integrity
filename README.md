@@ -1,4 +1,7 @@
 # boot-integrity
+
+[![ShellCheck](https://github.com/biocoderh/boot-integrity/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/biocoderh/boot-integrity/actions/workflows/shellcheck.yml)
+
 Systemd/Shell scripts to automate ESP cloning and clevis tpm2 pcr's changing on sysboot upgrades
 
 ## Install
