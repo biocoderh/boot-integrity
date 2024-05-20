@@ -10,6 +10,10 @@ Requirements:
 - curl
 - git
 
+- cryptsetup
+- clevis, clevis-luks, clevis-pin-tpm2
+- tpm2-tools
+
 ```sh
 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/biocoderh/boot-integrity/master/install.sh)"
 ```
