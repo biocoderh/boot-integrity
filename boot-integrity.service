@@ -1,6 +1,5 @@
 [Unit]
 Description=boot-integrity start/stop service
-After=multi-user.target
 
 [Service]
 Type=oneshot

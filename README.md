@@ -34,8 +34,8 @@ All settings set throught environment variables.
 ```env
 EFI_MIRROR=/boot/efi2
 CLEVIS_LUKS_SLOT=1
-DEFAULT_CLEVIS_LUKS_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
-DEFAULT_CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
+CLEVIS_LUKS_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
+CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
 ```
 
 ## Usage
