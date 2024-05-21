@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+sudo cp boot-integrity.env /etc/boot-integrity.env
+
 sudo cp -f boot-integrity.sh /usr/local/sbin/boot-integrity
 sudo chmod +x /usr/local/sbin/boot-integrity
 
