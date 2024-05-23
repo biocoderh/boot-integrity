@@ -3,7 +3,7 @@
 EFI_MIRROR=${EFI_MIRROR:-/boot/efi2}
 CLEVIS_LUKS_SLOT=${CLEVIS_LUKS_SLOT:-1}
 DEFAULT_CLEVIS_LUKS_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
-DEFAULT_CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
+DEFAULT_CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,5,7"}'
 
 EFI_TS_FILE='/var/tmp/efi.modified.timestamp'
 BOOT_TS_FILE='/var/tmp/boot.modified.timestamp'
@@ -170,7 +170,7 @@ environment variables:
     EFI_MIRROR - ESP mirror mountpint, should be present in /etc/fstab: /etc/efi2
     CLEVIS_LUKS_SLOT - default clevis luks tpm2 slot: 1
     CLEVIS_LUKS_CONFIG - default clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
-    CLEVIS_LUKS_UPGRADE_CONFIG - upgrade clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
+    CLEVIS_LUKS_UPGRADE_CONFIG - upgrade clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,5,7"}'
 
 EOF
   exit 1 ;;

@@ -17,7 +17,7 @@ Systemd/Shell scripts to automate ESP cloning and clevis tpm2 pcr's changing on 
 Requirements:
 - curl
 - git
-
+- systemd
 - cryptsetup
 - clevis, clevis-luks, clevis-pin-tpm2
 
@@ -35,7 +35,7 @@ All settings set throught environment variables.
 EFI_MIRROR=/boot/efi2
 CLEVIS_LUKS_SLOT=1
 CLEVIS_LUKS_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
-CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
+CLEVIS_LUKS_UPGRADE_CONFIG='{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,5,7"}'
 ```
 
 ## Usage
@@ -56,11 +56,15 @@ environment variables:
     EFI_MIRROR - ESP mirror mountpint, should be present in /etc/fstab: /etc/efi2
     CLEVIS_LUKS_SLOT - default clevis luks tpm2 slot: 1
     CLEVIS_LUKS_CONFIG - default clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7,9"}'
-    CLEVIS_LUKS_UPGRADE_CONFIG - upgrade clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,4,5,7"}'
+    CLEVIS_LUKS_UPGRADE_CONFIG - upgrade clevis luks config: '{"hash":"sha256","key":"ecc","pcr_bank":"sha256","pcr_ids":"0,1,2,3,5,7"}'
 
 ```
-## Links
+## See also
 
 [Safe automatic decryption of LUKS partition using TPM2](https://221b.uk/safe-automatic-decryption-luks-partition-tpm2)
 
 [dracut-crypt-ssh](https://github.com/dracut-crypt-ssh/dracut-crypt-ssh)
+
+[Decrypt LUKS volumes with a TPM on Fedora Linux (systemd-cryptenroll)](https://gist.github.com/jdoss/777e8b52c8d88eb87467935769c98a95)
+
+[systemd-pcrlock (experimental, v255 failed)](https://www.freedesktop.org/software/systemd/man/latest/systemd-pcrlock.html)
